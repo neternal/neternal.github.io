@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akash Kumar Sharma | Data Hero Origin Story</title>
+    <meta name="description" content="14+ years turning enterprise data chaos into clarity. AI-augmented analytics, MCP servers, RAG systems, and ML forecasting. Cisco Meraki, Lowe's, Amazon, Tesco.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Bowlby+One&family=Permanent+Marker&family=Anton&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --hero-red: #e63946;
+            --hero-blue: #1d4ed8;
+            --hero-yellow: #fbbf24;
+            --hero-cream: #fef3c7;
+            --ink: #0a0a0a;
+            --paper: #fffbeb;
+            --paper-pure: #ffffff;
+            --villain-purple: #7c3aed;
+            --pow-pink: #ec4899;
+            --caption-bg: #fde68a;
+            --news-bg: #0a0a0a;
+            --news-fg: #fbbf24;
+            --halftone-light-dot: rgba(0,0,0,0.12);
+        }
+        [data-theme="dark"] {
+            /* Spider-Verse night palette — Spot/Miguel territory */
+            --hero-red: #ff4d6d;        /* punchier red on dark */
+            --hero-blue: #60a5fa;        /* brighter blue, doesn't disappear */
+            --hero-yellow: #fde047;      /* electric yellow */
+            --hero-cream: #1a1d2e;
+            --ink: #f4f4f5;              /* "ink" becomes the bright outline */
+            --paper: #0d1117;            /* deep navy-black like night sky */
+            --paper-pure: #1a1d2e;       /* secondary panel */
+            --villain-purple: #a78bfa;
+            --pow-pink: #f472b6;
+            --caption-bg: #1e293b;       /* dark captions with bright text */
+            --news-bg: #fde047;          /* invert: yellow strip with dark text */
+            --news-fg: #0a0a0a;
+            --halftone-light-dot: rgba(255,255,255,0.10);
+        }
+
+        * { -webkit-tap-highlight-color: transparent; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            background: var(--paper);
+            color: var(--ink);
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            background-image:
+                radial-gradient(circle at 25% 25%, rgba(230,57,70,0.04) 0, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(29,78,216,0.04) 0, transparent 50%);
+        }
+
+        /* === FONTS === */
+        .f-bangers { font-family: 'Bangers', cursive; letter-spacing: 0.04em; }
+        .f-bowlby { font-family: 'Bowlby One', cursive; letter-spacing: -0.01em; }
+        .f-marker { font-family: 'Permanent Marker', cursive; }
+        .f-anton { font-family: 'Anton', sans-serif; letter-spacing: 0.02em; }
+        /* Clean label utility — Inter at small sizes for readability */
+        .f-label {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        /* === HALFTONE BEN-DAY DOTS === */
+        .halftone-red {
+            background-color: var(--hero-red);
+            background-image: radial-gradient(circle, rgba(0,0,0,0.25) 1.2px, transparent 1.2px);
+            background-size: 8px 8px;
+        }
+        .halftone-blue {
+            background-color: var(--hero-blue);
+            background-image: radial-gradient(circle, rgba(255,255,255,0.2) 1.2px, transparent 1.2px);
+            background-size: 8px 8px;
+        }
+        .halftone-yellow {
+            background-color: var(--hero-yellow);
+            background-image: radial-gradient(circle, rgba(0,0,0,0.18) 1px, transparent 1px);
+            background-size: 7px 7px;
+        }
+        .halftone-light {
+            background-image: radial-gradient(circle, var(--halftone-light-dot) 1px, transparent 1px);
+            background-size: 6px 6px;
+        }
+        .halftone-pink {
+            background-color: var(--pow-pink);
+            background-image: radial-gradient(circle, rgba(255,255,255,0.25) 1.2px, transparent 1.2px);
+            background-size: 8px 8px;
+        }
+
+        /* === ACTION LINES (radiating speed lines) === */
+        .action-lines {
+            background-image: repeating-conic-gradient(
+                from 0deg at 50% 50%,
+                transparent 0deg 6deg,
+                rgba(0,0,0,0.08) 6deg 8deg
+            );
+        }
+
+        /* === PANEL (the comic-book frame) === */
+        .panel {
+            background: var(--paper);
+            border: 4px solid var(--ink);
+            box-shadow: 6px 6px 0 var(--ink), 6px 6px 0 4px var(--ink);
+            position: relative;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .panel:hover {
+            transform: translate(-3px, -3px) rotate(-0.5deg);
+            box-shadow: 9px 9px 0 var(--ink), 9px 9px 0 4px var(--hero-red);
+        }
+        .panel-tilt-l { transform: rotate(-1.5deg); }
+        .panel-tilt-r { transform: rotate(1.5deg); }
+        .panel-tilt-l:hover { transform: rotate(-1.5deg) translate(-3px,-3px); }
+        .panel-tilt-r:hover { transform: rotate(1.5deg) translate(-3px,-3px); }
+
+        /* === NARRATION CAPTION BOX (yellow comic caption) === */
+        .caption-box {
+            background: var(--caption-bg);
+            border: 3px solid var(--ink);
+            padding: 8px 14px;
+            box-shadow: 4px 4px 0 var(--ink);
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-style: italic;
+            color: var(--ink);
+            position: relative;
+            display: inline-block;
+            transform: rotate(-1deg);
+        }
+        .caption-box::before {
+            content: "";
+            position: absolute;
+            top: -3px; left: -3px;
+            right: -3px; bottom: -3px;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent 0 4px,
+                rgba(0,0,0,0.04) 4px 5px
+            );
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* === SPEECH BUBBLE === */
+        .speech-bubble {
+            background: var(--paper-pure);
+            color: var(--ink);
+            border: 4px solid var(--ink);
+            border-radius: 24px;
+            padding: 14px 20px;
+            position: relative;
+            box-shadow: 5px 5px 0 var(--ink);
+        }
+        .speech-bubble::after {
+            content: "";
+            position: absolute;
+            bottom: -22px;
+            left: 30px;
+            width: 28px;
+            height: 28px;
+            background: var(--paper-pure);
+            border-right: 4px solid var(--ink);
+            border-bottom: 4px solid var(--ink);
+            transform: rotate(45deg) skew(-10deg, -10deg);
+        }
+
+        /* === SFX BURSTS (POW! BAM! THWIP!) === */
+        .sfx {
+            display: inline-block;
+            font-family: 'Bangers', cursive;
+            color: var(--hero-yellow);
+            -webkit-text-stroke: 3px var(--ink);
+            text-stroke: 3px var(--ink);
+            text-shadow:
+                4px 4px 0 var(--ink),
+                -1px -1px 0 var(--ink);
+            transform: rotate(-8deg);
+            letter-spacing: 0.02em;
+        }
+        .sfx-red { color: var(--hero-red); }
+        .sfx-blue { color: white; -webkit-text-stroke: 3px var(--hero-blue); text-shadow: 4px 4px 0 var(--hero-blue); }
+
+        .burst {
+            position: relative;
+            display: inline-block;
+            padding: 16px 28px;
+            color: var(--ink);
+            font-family: 'Bangers', cursive;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            -webkit-text-stroke: 1.5px var(--ink);
+            transform: rotate(-6deg);
+            background: var(--hero-yellow);
+            clip-path: polygon(
+                0% 25%, 8% 0%, 22% 18%, 35% 2%, 48% 20%, 62% 0%, 75% 16%, 88% 4%, 100% 22%,
+                95% 40%, 100% 58%, 88% 70%, 100% 82%, 84% 90%, 92% 100%, 70% 92%, 60% 100%, 45% 88%, 30% 100%, 18% 88%, 0% 95%, 8% 75%, 0% 60%, 12% 45%
+            );
+            box-shadow: 6px 6px 0 var(--ink);
+        }
+        .burst::before {
+            content: "";
+            position: absolute;
+            inset: 6px;
+            background: var(--hero-red);
+            clip-path: polygon(
+                0% 25%, 8% 0%, 22% 18%, 35% 2%, 48% 20%, 62% 0%, 75% 16%, 88% 4%, 100% 22%,
+                95% 40%, 100% 58%, 88% 70%, 100% 82%, 84% 90%, 92% 100%, 70% 92%, 60% 100%, 45% 88%, 30% 100%, 18% 88%, 0% 95%, 8% 75%, 0% 60%, 12% 45%
+            );
+            z-index: -1;
+        }
+
+        /* === MARQUEE BANNER (newspaper strip) === */
+        .news-strip {
+            background: var(--news-bg);
+            color: var(--news-fg);
+            padding: 12px 0;
+            border-top: 4px solid var(--ink);
+            border-bottom: 4px solid var(--ink);
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+            font-size: 0.85rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+        .news-track {
+            display: inline-block;
+            white-space: nowrap;
+            animation: scroll 28s linear infinite;
+        }
+        @keyframes scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        /* === STICKY NAV === */
+        .sticky-nav {
+            position: sticky; top: 0; z-index: 50;
+            background: var(--news-bg);
+            color: var(--news-fg);
+            border-bottom: 4px solid var(--ink);
+        }
+        .nav-link {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 0.82rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 6px 12px;
+            border: 2px solid transparent;
+            transition: all 0.15s ease;
+            white-space: nowrap;
+            color: var(--news-fg);
+        }
+        .nav-link:hover { border-color: var(--news-fg); background: var(--hero-red); color: var(--paper-pure); transform: rotate(-2deg); }
+        .nav-link.active { border-color: var(--hero-red); color: var(--hero-red); }
+
+        .theme-toggle {
+            background: transparent; border: 2px solid var(--news-fg); color: var(--news-fg);
+            width: 36px; height: 36px;
+            display: inline-flex; align-items: center; justify-content: center;
+            cursor: pointer; font-weight: 900;
+            transition: all 0.2s ease;
+        }
+        .theme-toggle:hover { background: var(--hero-red); color: var(--paper-pure); border-color: var(--hero-red); }
+
+        /* === LOGO BOX === */
+        /* Stays white in both modes — SVG marks are black, need white BG to stand out */
+        .logo-box {
+            width: 56px; height: 56px;
+            border: 3px solid var(--ink);
+            background: #fff;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 4px 4px 0 var(--ink);
+            flex-shrink: 0; overflow: hidden;
+        }
+        .logo-box svg { width: 70%; height: 70%; }
+
+        /* === SECTION TITLE WITH SFX === */
+        .section-title {
+            font-family: 'Bangers', cursive;
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            letter-spacing: 0.04em;
+            color: var(--ink);
+            display: inline-block;
+            position: relative;
+            -webkit-text-stroke: 0;
+            text-shadow:
+                3px 3px 0 var(--hero-yellow),
+                4px 4px 0 var(--ink);
+        }
+        .section-title.red { text-shadow: 3px 3px 0 var(--hero-red), 4px 4px 0 var(--ink); }
+        .section-title.blue { text-shadow: 3px 3px 0 var(--hero-blue), 4px 4px 0 var(--ink); }
+
+        section[id] { scroll-margin-top: 80px; }
+
+        /* === COMIC PILL (badge) === */
+        .comic-pill {
+            display: inline-block;
+            border: 2.5px solid var(--ink);
+            padding: 5px 12px;
+            background: var(--paper-pure);
+            color: var(--ink);
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 0.78rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            box-shadow: 3px 3px 0 var(--ink);
+            transition: all 0.15s ease;
+            text-decoration: none;
+        }
+        .comic-pill:hover {
+            transform: translate(-2px, -2px) rotate(-2deg);
+            box-shadow: 5px 5px 0 var(--hero-red);
+        }
+
+        /* === CONTACT PILL (high contrast) === */
+        .contact-pill {
+            display: inline-flex; align-items: center; gap: 6px;
+            border: 3px solid var(--ink);
+            padding: 9px 16px;
+            background: var(--paper-pure); color: var(--ink);
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            box-shadow: 4px 4px 0 var(--ink);
+            transition: all 0.15s ease;
+            text-decoration: none;
+        }
+        .contact-pill:hover {
+            transform: translate(-2px,-2px) rotate(-1.5deg);
+            box-shadow: 6px 6px 0 var(--hero-red);
+            background: var(--hero-yellow);
+        }
+        .contact-pill.primary { background: var(--hero-red); color: white; }
+        .contact-pill.primary:hover { background: var(--hero-blue); color: white; }
+
+        /* === STAT BURST CARDS === */
+        .stat-card {
+            border: 4px solid var(--ink);
+            padding: 16px 12px;
+            text-align: center;
+            box-shadow: 5px 5px 0 var(--ink);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .stat-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle, rgba(0,0,0,0.08) 1px, transparent 1px);
+            background-size: 6px 6px;
+            pointer-events: none;
+        }
+        .stat-card:hover {
+            transform: translate(-3px,-3px) rotate(-1deg);
+            box-shadow: 8px 8px 0 var(--ink);
+        }
+
+        /* === TIMELINE === */
+        .timeline-track {
+            display: flex; gap: 0; overflow-x: auto;
+            padding: 8px 0 24px;
+            scrollbar-width: thin;
+            border-bottom: 4px solid var(--ink);
+        }
+        .timeline-track::-webkit-scrollbar { height: 6px; }
+        .timeline-track::-webkit-scrollbar-thumb { background: var(--ink); }
+        .timeline-node {
+            flex: 1 0 120px; min-width: 120px;
+            border-right: 3px dashed var(--ink);
+            padding: 10px 12px;
+            position: relative;
+        }
+        .timeline-node:last-child { border-right: none; }
+        .timeline-node::before {
+            content: "";
+            position: absolute;
+            top: -6px; left: -7px;
+            width: 14px; height: 14px;
+            background: var(--ink);
+            border: 2px solid var(--ink);
+            border-radius: 50%;
+        }
+        .timeline-node.current::before {
+            background: var(--hero-red);
+            box-shadow: 0 0 0 4px var(--hero-yellow);
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0%,100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        /* === ROLE ROW === */
+        .role-row {
+            border: 4px solid var(--ink);
+            background: var(--paper);
+            color: var(--ink);
+            padding: 16px 18px;
+            display: flex; align-items: center; gap: 16px;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+            box-shadow: 5px 5px 0 var(--ink);
+        }
+        .role-row:hover {
+            transform: translate(-3px,-3px) rotate(-0.5deg);
+            box-shadow: 8px 8px 0 var(--hero-red);
+        }
+
+        /* === REVEAL === */
+        .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .reveal.in-view { opacity: 1; transform: translateY(0); }
+
+        /* === SPIDER WEB CORNER DECORATION === */
+        .web-corner {
+            position: absolute;
+            width: 80px; height: 80px;
+            pointer-events: none;
+            opacity: 0.4;
+        }
+
+        @media (max-width: 768px) {
+            .panel { box-shadow: 4px 4px 0 var(--ink); }
+            .panel-tilt-l, .panel-tilt-r { transform: none; }
+            .timeline-node { min-width: 100px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP NEWS STRIP -->
+    <div class="news-strip">
+        <div class="news-track">
+            <span class="px-6">★ AI-AUGMENTED ANALYTICS</span>
+            <span class="px-6">★ MCP SERVERS DEPLOYED</span>
+            <span class="px-6">★ RAG SYSTEMS LIVE</span>
+            <span class="px-6">★ SNOWFLAKE AI ACTIVATED</span>
+            <span class="px-6">★ ML FORECASTS SHIPPED</span>
+            <span class="px-6">★ ENTERPRISE GOVERNANCE ESTABLISHED</span>
+            <span class="px-6">★ FP&amp;A AUTOMATION ENGAGED</span>
+            <span class="px-6">★ AI-AUGMENTED ANALYTICS</span>
+            <span class="px-6">★ MCP SERVERS DEPLOYED</span>
+            <span class="px-6">★ RAG SYSTEMS LIVE</span>
+            <span class="px-6">★ SNOWFLAKE AI ACTIVATED</span>
+            <span class="px-6">★ ML FORECASTS SHIPPED</span>
+            <span class="px-6">★ ENTERPRISE GOVERNANCE ESTABLISHED</span>
+            <span class="px-6">★ FP&amp;A AUTOMATION ENGAGED</span>
+        </div>
+    </div>
+
+    <!-- STICKY NAV -->
+    <nav class="sticky-nav">
+        <div class="max-w-7xl mx-auto px-4 md:px-8 py-3 flex items-center justify-between gap-4">
+            <a href="#top" class="f-bangers text-xl md:text-2xl whitespace-nowrap" style="color: var(--hero-yellow);">⌘ AKS</a>
+            <div class="flex items-center gap-1 md:gap-2 overflow-x-auto">
+                <a href="#impact" class="nav-link">Impact</a>
+                <a href="#projects" class="nav-link">Missions</a>
+                <a href="#experience" class="nav-link">Origin</a>
+                <a href="#stack" class="nav-link">Powers</a>
+                <a href="#contact" class="nav-link">Hotline</a>
+            </div>
+            <div class="flex items-center gap-2">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                    <span id="theme-icon">◐</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO PANEL -->
+    <header id="top" class="px-4 md:px-12 pt-8 md:pt-12 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-6">
+
+            <!-- LEFT BIG PANEL -->
+            <div class="md:col-span-8 panel halftone-yellow p-8 md:p-10 relative" style="color: var(--ink);">
+                <!-- Web corners -->
+                <svg class="web-corner" style="top:-2px; left:-2px;" viewBox="0 0 80 80">
+                    <g stroke="#0a0a0a" stroke-width="2" fill="none">
+                        <path d="M0,0 L80,80 M0,40 Q40,40 40,80 M0,0 Q40,40 80,40 M0,80 L80,0 M0,20 Q60,20 60,80 M20,0 Q20,60 80,60"/>
+                    </g>
+                </svg>
+
+                <!-- Caption box -->
+                <div class="caption-box mb-4 max-w-md">
+                    <span class="text-xs md:text-sm">// MEANWHILE, IN BENGALURU... A DATA HERO ANSWERS THE CALL.</span>
+                </div>
+
+                <h1 class="f-bowlby text-5xl md:text-7xl lg:text-8xl uppercase leading-[0.95] mt-2" style="color: var(--ink); text-shadow: 4px 4px 0 var(--hero-red);">
+                    Akash Kumar<br>Sharma
+                </h1>
+
+                <div class="mt-6 flex flex-wrap items-center gap-3">
+                    <div class="comic-pill" style="background: var(--hero-blue); color: #fff; border-color: var(--ink);">DATA SCIENCE MANAGER</div>
+                    <div class="comic-pill" style="background: var(--hero-red); color: #fff; border-color: var(--ink);">AI ARCHITECT</div>
+                    <div class="comic-pill" style="background: var(--ink); color: var(--hero-yellow); border-color: var(--ink);">14+ YRS XP</div>
+                </div>
+
+                <!-- Speech bubble for the pitch -->
+                <div class="mt-7 speech-bubble max-w-2xl">
+                    <p class="text-base md:text-lg leading-relaxed" style="font-weight: 500;">
+                        14+ years turning enterprise data <i>chaos</i> into the numbers executives actually trust. I architect the <b>AI-augmented analytics platforms</b>, <b>ML forecasting systems</b>, and <b>governance frameworks</b> that quietly run finance and ops at <b>Cisco Meraki</b>, <b>Lowe's</b>, <b>Amazon</b>, and <b>Tesco</b>.
+                    </p>
+                </div>
+
+                <!-- SFX with damage stat -->
+                <div class="mt-10 flex items-center gap-4 flex-wrap">
+                    <span class="sfx text-5xl md:text-6xl">KAPOW!</span>
+                    <div class="f-anton text-2xl md:text-3xl uppercase" style="color: var(--ink);">
+                        $13M+ <span class="text-base md:text-lg" style="font-weight:700; font-family: 'Inter';">in measurable business impact</span>
+                    </div>
+                </div>
+
+                <div class="mt-8 flex flex-wrap gap-3">
+                    <a href="mailto:aakash.ascend@gmail.com" class="contact-pill primary">✉ Email</a>
+                    <a href="tel:+919686333180" class="contact-pill">☏ +91-9686333180</a>
+                    <a href="https://linkedin.com/in/akashascend" class="contact-pill">in / LinkedIn</a>
+                    <a href="https://github.com/aakashascend-cell" class="contact-pill">⌥ GitHub</a>
+                    <a href="#contact" class="contact-pill" style="background: var(--hero-yellow);">↓ Resume</a>
+                </div>
+            </div>
+
+            <!-- RIGHT SMALL PANEL — "ORIGIN STORY" -->
+            <div class="md:col-span-4 panel halftone-red p-7 md:p-8 flex flex-col justify-between" style="color: white;">
+                <svg class="web-corner" style="top:-2px; right:-2px; transform: scaleX(-1);" viewBox="0 0 80 80">
+                    <g stroke="white" stroke-width="2" fill="none" opacity="0.6">
+                        <path d="M0,0 L80,80 M0,40 Q40,40 40,80 M0,0 Q40,40 80,40 M0,80 L80,0"/>
+                    </g>
+                </svg>
+                <div>
+                    <div class="comic-pill mb-3" style="background: var(--ink); color: var(--hero-yellow); border-color: var(--ink); transform: rotate(-2deg);">★ ORIGIN STORY</div>
+                    <h2 class="f-bangers text-3xl md:text-4xl mt-2" style="color: var(--hero-yellow); -webkit-text-stroke: 2px var(--ink); text-shadow: 3px 3px 0 var(--ink);">THE POWER, THE PURPOSE</h2>
+                    <p class="leading-relaxed text-sm md:text-base mt-4" style="color: white; font-weight: 500;">
+                        With great data comes great responsibility. I translate complex architectures into systems that help leaders decide <i>faster</i>, <i>cheaper</i>, with <i>sharper context</i>.
+                    </p>
+                </div>
+                <div class="mt-6 pt-4 border-t-4 border-white f-label text-xs" style="letter-spacing: 0.08em;">
+                    <div>↳ HQ: Cisco Meraki India</div>
+                    <div>↳ Mission: Staff / Lead / Manager FTE</div>
+                    <div>↳ Mode: On-site · Hybrid · Remote</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- TIMELINE -->
+    <section class="px-4 md:px-12 pt-12 max-w-7xl mx-auto reveal">
+        <div class="flex items-end gap-4 mb-4 flex-wrap">
+            <h2 class="section-title red">THE ORIGIN STORY</h2>
+            <p class="f-label text-sm md:text-base mt-2 opacity-80" style="letter-spacing: 0.12em;">↳ 14 YEARS · 6 ORGS · ENGINEER → MANAGER</p>
+        </div>
+        <div class="panel p-4 md:p-6 halftone-light" style="background: var(--paper-pure);">
+            <div class="timeline-track" style="border-bottom: none;">
+                <div class="timeline-node">
+                    <p class="f-bangers text-sm" style="color: var(--hero-blue);">2010</p>
+                    <p class="f-bowlby text-base uppercase mt-1">Accenture</p>
+                    <p class="text-xs mt-1 font-bold opacity-70">SW Engineer</p>
+                </div>
+                <div class="timeline-node">
+                    <p class="f-bangers text-sm" style="color: var(--hero-blue);">2016</p>
+                    <p class="f-bowlby text-base uppercase mt-1">Tesco</p>
+                    <p class="text-xs mt-1 font-bold opacity-70">Insight Analyst</p>
+                </div>
+                <div class="timeline-node">
+                    <p class="f-bangers text-sm" style="color: var(--hero-blue);">2017</p>
+                    <p class="f-bowlby text-base uppercase mt-1">Cloudtail</p>
+                    <p class="text-xs mt-1 font-bold opacity-70">Business Analyst</p>
+                </div>
+                <div class="timeline-node">
+                    <p class="f-bangers text-sm" style="color: var(--hero-blue);">2020</p>
+                    <p class="f-bowlby text-base uppercase mt-1">Amazon EU</p>
+                    <p class="text-xs mt-1 font-bold opacity-70">BA II</p>
+                </div>
+                <div class="timeline-node">
+                    <p class="f-bangers text-sm" style="color: var(--hero-blue);">2021</p>
+                    <p class="f-bowlby text-base uppercase mt-1">Lowe's</p>
+                    <p class="text-xs mt-1 font-bold opacity-70">Analytics Lead</p>
+                </div>
+                <div class="timeline-node current">
+                    <p class="f-bangers text-sm" style="color: var(--hero-red);">★ 2024 — NOW</p>
+                    <p class="f-bowlby text-base uppercase mt-1">Cisco Meraki</p>
+                    <p class="text-xs mt-1 font-bold">Manager, BA</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IMPACT BY THE NUMBERS -->
+    <section id="impact" class="px-4 md:px-12 py-12 max-w-7xl mx-auto reveal">
+        <div class="flex items-end gap-4 mb-6 flex-wrap">
+            <h2 class="section-title">DAMAGE REPORT</h2>
+            <p class="f-label text-sm md:text-base opacity-80" style="letter-spacing: 0.12em;">↳ THE STATS THAT EARNED THE CAPE</p>
+        </div>
+
+        <!-- HERO METRICS -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5 mb-5">
+            <div class="stat-card halftone-red panel-tilt-l" style="color: white;">
+                <p class="f-bangers text-xs mb-2" style="letter-spacing: 0.08em;">★ TOTAL DAMAGE ★</p>
+                <p class="f-bowlby text-4xl md:text-6xl" style="-webkit-text-stroke: 2px var(--ink); text-shadow: 3px 3px 0 var(--ink);">$13M+</p>
+                <p class="text-[11px] md:text-xs font-bold uppercase mt-3 leading-tight tracking-wide">Cumulative business impact</p>
+            </div>
+            <div class="stat-card halftone-yellow" style="color: var(--ink);">
+                <p class="f-bangers text-xs mb-2" style="letter-spacing: 0.08em;">⚡ SPEED BOOST ⚡</p>
+                <p class="f-bowlby text-4xl md:text-6xl" style="text-shadow: 3px 3px 0 var(--hero-red);">75%</p>
+                <p class="text-[11px] md:text-xs font-bold uppercase mt-3 leading-tight tracking-wide">Faster deployment via AI-authored SQL</p>
+            </div>
+            <div class="stat-card halftone-blue panel-tilt-r" style="color: white;">
+                <p class="f-bangers text-xs mb-2" style="letter-spacing: 0.08em;">⚡ TIME WARP ⚡</p>
+                <p class="f-bowlby text-4xl md:text-6xl" style="-webkit-text-stroke: 2px var(--ink); text-shadow: 3px 3px 0 var(--ink);">3D→4H</p>
+                <p class="text-[11px] md:text-xs font-bold uppercase mt-3 leading-tight tracking-wide">Exec reporting compressed at Lowe's</p>
+            </div>
+            <div class="stat-card" style="background: var(--hero-yellow); color: var(--ink);">
+                <p class="f-bangers text-xs mb-2" style="letter-spacing: 0.08em;">★ JACKPOT ★</p>
+                <p class="f-bowlby text-4xl md:text-6xl" style="text-shadow: 3px 3px 0 var(--hero-blue);">$4.5M</p>
+                <p class="text-[11px] md:text-xs font-bold uppercase mt-3 leading-tight tracking-wide">Cross-functional revenue unlocked</p>
+            </div>
+        </div>
+
+        <!-- SUPPORTING METRICS -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+            <div class="stat-card panel-tilt-r" style="background: var(--hero-yellow); color: var(--ink);">
+                <p class="f-bowlby text-2xl md:text-3xl">₹26Cr</p>
+                <p class="text-[11px] font-bold uppercase mt-2 leading-tight tracking-wide">Tesco BI efficiencies</p>
+            </div>
+            <div class="stat-card halftone-pink" style="color: white;">
+                <p class="f-bowlby text-2xl md:text-3xl" style="-webkit-text-stroke: 1.5px var(--ink);">€2.1M</p>
+                <p class="text-[11px] font-bold uppercase mt-2 leading-tight tracking-wide">Amazon EU softline savings</p>
+            </div>
+            <div class="stat-card panel-tilt-l" style="background: var(--paper-pure); color: var(--ink);">
+                <p class="f-bowlby text-2xl md:text-3xl" style="text-shadow: 2px 2px 0 var(--hero-red);">$2.1M</p>
+                <p class="text-[11px] font-bold uppercase mt-2 leading-tight tracking-wide">Tooling spend eliminated</p>
+            </div>
+            <div class="stat-card" style="background: var(--hero-red); color: white;">
+                <p class="f-bowlby text-2xl md:text-3xl" style="-webkit-text-stroke: 1.5px var(--ink); text-shadow: 2px 2px 0 var(--ink);">₹15Cr</p>
+                <p class="text-[11px] font-bold uppercase mt-2 leading-tight tracking-wide">Cloudtail revenue surfaced</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW I WORK -->
+    <section class="px-4 md:px-12 py-8 max-w-7xl mx-auto reveal">
+        <div class="flex items-end gap-4 mb-6 flex-wrap">
+            <h2 class="section-title blue">THE HERO CODE</h2>
+            <p class="f-label text-sm md:text-base opacity-80" style="letter-spacing: 0.12em;">↳ THREE RULES, ZERO COMPROMISES</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+            <div class="panel p-6 halftone-light panel-tilt-l" style="background: var(--paper-pure);">
+                <p class="f-bangers text-2xl mb-2" style="color: var(--hero-red);">RULE #01</p>
+                <h3 class="f-bowlby text-xl uppercase mb-3">Analytics Like Products</h3>
+                <p class="text-sm leading-relaxed" style="font-weight:500;">Governed, observable, and boring to operate. The dashboards executives trust are the ones nobody has to babysit.</p>
+            </div>
+            <div class="panel p-6" style="background: var(--paper-pure);">
+                <p class="f-bangers text-2xl mb-2" style="color: var(--hero-blue);">RULE #02</p>
+                <h3 class="f-bowlby text-xl uppercase mb-3">AI As Force-Multiplier</h3>
+                <p class="text-sm leading-relaxed" style="font-weight:500;">RAG and MCP aren't demos — they're the new shape of internal tooling. Built right, they collapse weeks of analyst work into seconds.</p>
+            </div>
+            <div class="panel p-6 halftone-light panel-tilt-r" style="background: var(--paper-pure);">
+                <p class="f-bangers text-2xl mb-2" style="color: var(--villain-purple);">RULE #03</p>
+                <h3 class="f-bowlby text-xl uppercase mb-3">Numbers Serve The Story</h3>
+                <p class="text-sm leading-relaxed" style="font-weight:500;">An insight that doesn't change a decision is a vanity metric. Every model and dashboard I ship has a directly traceable business action.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SIGNATURE PROJECTS -->
+    <section id="projects" class="px-4 md:px-12 py-12 max-w-7xl mx-auto reveal">
+        <div class="flex items-end gap-4 mb-6 flex-wrap">
+            <h2 class="section-title red">SIGNATURE MISSIONS</h2>
+            <p class="f-label text-sm md:text-base opacity-80" style="letter-spacing: 0.12em;">↳ THE BIG VILLAINS DEFEATED</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <div class="panel p-6" style="background: var(--paper-pure);">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="comic-pill" style="background: var(--hero-yellow); color: var(--ink); border-color: var(--ink);">★ MISSION 01</div>
+                    <span class="f-label text-xs" style="color: var(--hero-blue);">SNOWFLAKE · MCP</span>
+                </div>
+                <h3 class="f-bowlby text-xl md:text-2xl uppercase leading-tight mb-3">Governed Analytics MCP Server</h3>
+                <p class="text-sm leading-relaxed mb-3" style="font-weight:500;">A Model Context Protocol server on Snowflake exposing ARR, Bookings, and product-mix metrics through controlled natural-language queries.</p>
+                <div class="caption-box my-4 inline-block" style="font-size: 0.7rem; transform: rotate(-1deg);">
+                    <span>// THE VILLAIN: HALLUCINATION</span>
+                </div>
+                <p class="text-sm leading-relaxed" style="font-weight:500;">Finance metrics don't tolerate hallucination. Every query resolves through a sanctioned semantic layer with row-level guardrails, schema validation, and an audit trail — without losing the natural-language interface.</p>
+                <div class="flex flex-wrap gap-2 mt-4">
+                    <span class="comic-pill" style="font-size: 0.75rem; padding: 3px 10px;">Snowflake</span>
+                    <span class="comic-pill" style="font-size: 0.75rem; padding: 3px 10px;">MCP</span>
+                    <span class="comic-pill" style="font-size: 0.75rem; padding: 3px 10px;">Python</span>
+                    <span class="comic-pill" style="font-size: 0.75rem; padding: 3px 10px;">Semantic Layer</span>
+                </div>
+                <a href="https://github.com/aakashascend-cell" class="inline-block mt-4 f-label text-xs border-b-2 border-current pb-0.5 hover:opacity-60">↗ VIEW ON GITHUB</a>
+            </div>
+
+            <div class="panel p-6" style="background: var(--paper-pure);">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="comic-pill" style="background: var(--pow-pink); color: white;">★ MISSION 02</div>
+                    <span class="f-label text-xs" style="color: var(--hero-red);">RAG · CHROMADB</span>
+                </div>
+                <h3 class="f-bowlby text-xl md:text-2xl uppercase leading-tight mb-3">RAG Troubleshooting Assistant</h3>
+                <p class="text-sm leading-relaxed mb-3" style="font-weight:500;">Retrieval-augmented assistant over markdown runbooks using sentence-transformer embeddings + ChromaDB semantic search to surface the right fix in seconds.</p>
+                <div class="caption-box my-4 inline-block" style="font-size: 0.7rem; transform: rotate(1deg);">
+                    <span>// THE VILLAIN: STALE RUNBOOKS</span>
+                </div>
+                <p class="text-sm leading-relaxed" style="font-weight:500;">Runbook content is long-tail and inconsistent. Retrieval has to handle vague symptom queries, cross-reference adjacent procedures, and never invent steps that aren't in the source — a wrong fix is worse than no fix.</p>
+                <div class="flex flex-wrap gap-2 mt-4">
+                    <span class="comic-pill" style="font-size: 0.75rem; padding: 3px 10px;">RAG</span>
+                    <span class="comic-pill" style="font-size: 0.75rem; padding: 3px 10px;">ChromaDB</span>
+                    <span class="comic-pill" style="font-size: 0.75rem; padding: 3px 10px;">Sentence-Transformers</span>
+                    <span class="comic-pill" style="font-size: 0.75rem; padding: 3px 10px;">LangChain</span>
+                </div>
+                <a href="https://github.com/aakashascend-cell" class="inline-block mt-4 f-label text-xs border-b-2 border-current pb-0.5 hover:opacity-60">↗ VIEW ON GITHUB</a>
+            </div>
+
+            <div class="panel p-6" style="background: var(--paper-pure);">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="comic-pill" style="background: var(--hero-blue); color: #fff; border-color: var(--ink);">★ MISSION 03</div>
+                    <span class="f-label text-xs" style="color: var(--hero-blue);">FORECASTING</span>
+                </div>
+                <h3 class="f-bowlby text-xl md:text-2xl uppercase leading-tight mb-3">Demand &amp; Inventory Forecasting</h3>
+                <p class="text-sm leading-relaxed mb-3" style="font-weight:500;">Predictive models across 5 business units at Lowe's — scikit-learn + TensorFlow stack driving a 23% reduction in inventory risk.</p>
+                <div class="caption-box my-4 inline-block" style="font-size: 0.7rem; transform: rotate(-1deg);">
+                    <span>// THE VILLAIN: SEASONAL CHAOS</span>
+                </div>
+                <p class="text-sm leading-relaxed" style="font-weight:500;">Retail demand is non-stationary, seasonal, and full of promotional shocks. Models surface anomalies fast enough for FP&amp;A to act on — accuracy alone doesn't matter if insights arrive after the quarter closes.</p>
+                <div class="flex flex-wrap gap-2 mt-4">
+                    <span class="comic-pill" style="font-size: 0.75rem; padding: 3px 10px;">scikit-learn</span>
+                    <span class="comic-pill" style="font-size: 0.75rem; padding: 3px 10px;">TensorFlow</span>
+                    <span class="comic-pill" style="font-size: 0.75rem; padding: 3px 10px;">Time Series</span>
+                </div>
+            </div>
+
+            <div class="panel p-6" style="background: var(--paper-pure);">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="comic-pill" style="background: var(--hero-yellow); color: var(--ink);">★ MISSION 04</div>
+                    <span class="f-label text-xs" style="color: var(--hero-red);">ETL · BI</span>
+                </div>
+                <h3 class="f-bowlby text-xl md:text-2xl uppercase leading-tight mb-3">FP&amp;A &amp; Supply-Chain Integration</h3>
+                <p class="text-sm leading-relaxed mb-3" style="font-weight:500;">Unified financial &amp; supply-chain analytics layer — collapsing exec reporting from 3 days to 4 hours, with live KPI monitoring.</p>
+                <div class="caption-box my-4 inline-block" style="font-size: 0.7rem; transform: rotate(1deg);">
+                    <span>// THE VILLAIN: SILOED SYSTEMS</span>
+                </div>
+                <p class="text-sm leading-relaxed" style="font-weight:500;">Finance and supply-chain systems have radically different update cadences and ownership. The hard part isn't the ETL — it's getting both teams to agree on a single source of truth without breaking month-end close.</p>
+                <div class="flex flex-wrap gap-2 mt-4">
+                    <span class="comic-pill" style="font-size: 0.75rem; padding: 3px 10px;">Python</span>
+                    <span class="comic-pill" style="font-size: 0.75rem; padding: 3px 10px;">SQL</span>
+                    <span class="comic-pill" style="font-size: 0.75rem; padding: 3px 10px;">ETL/ELT</span>
+                    <span class="comic-pill" style="font-size: 0.75rem; padding: 3px 10px;">Power BI</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <main id="experience" class="px-4 md:px-12 py-12 max-w-7xl mx-auto reveal">
+        <div class="flex items-end gap-4 mb-8 flex-wrap">
+            <h2 class="section-title">THE BACKSTORY</h2>
+            <p class="f-label text-sm md:text-base opacity-80" style="letter-spacing: 0.12em;">↳ EVERY HERO HAS A HISTORY</p>
+        </div>
+
+        <div class="space-y-8">
+            <!-- CISCO MERAKI -->
+            <article class="panel p-6 md:p-8 relative" style="background: var(--paper-pure);">
+                <div class="absolute top-0 right-0 px-4 py-1 f-label text-xs halftone-red" style="color: white; border-left: 4px solid var(--ink); border-bottom: 4px solid var(--ink);">★ CURRENT MISSION · OCT 2024 — PRESENT</div>
+                <div class="flex items-start gap-5 mb-4 mt-8 md:mt-2">
+                    <div class="logo-box">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="Cisco Meraki">
+                            <g fill="#000">
+                                <rect x="8" y="40" width="6" height="20"/>
+                                <rect x="20" y="32" width="6" height="36"/>
+                                <rect x="32" y="22" width="6" height="56"/>
+                                <rect x="44" y="32" width="6" height="36"/>
+                                <rect x="56" y="40" width="6" height="20"/>
+                                <rect x="68" y="32" width="6" height="36"/>
+                                <rect x="80" y="22" width="6" height="56"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="f-bowlby text-xl md:text-3xl uppercase leading-tight">Cisco Meraki India</h3>
+                        <p class="font-bold opacity-70 italic mt-1">Manager, Business Analytics</p>
+                    </div>
+                </div>
+                <ul class="space-y-2 text-sm md:text-base leading-relaxed" style="font-weight:500;">
+                    <li>→ Designed &amp; shipped a <b>governed analytics MCP server</b> on Snowflake — exposing ARR, Bookings, and product mix through controlled natural-language queries for finance partners.</li>
+                    <li>→ Built a <b>RAG troubleshooting assistant</b> with sentence-transformer embeddings + ChromaDB semantic search across operational runbooks.</li>
+                    <li>→ Modernized data-engineering workflows with <b>Snowflake AI</b> to dynamically author SQL — lifting deployment velocity by <b>75%</b>.</li>
+                    <li>→ Established a data-alignment strategy across <b>3 business units</b>, surfacing <b>$4.5M</b> in cross-functional revenue opportunities.</li>
+                    <li>→ Designed an <b>enterprise data governance &amp; risk framework</b>, eliminating <b>$2.1M</b> in redundant tooling spend.</li>
+                </ul>
+                <div class="flex flex-wrap gap-2 mt-5 pt-4" style="border-top: 3px dashed var(--ink);">
+                    <span class="comic-pill" style="background: var(--hero-yellow); color: var(--ink); border-color: var(--ink); font-size: 0.8rem;">Snowflake AI</span>
+                    <span class="comic-pill" style="background: var(--hero-yellow); color: var(--ink); border-color: var(--ink); font-size: 0.8rem;">MCP</span>
+                    <span class="comic-pill" style="background: var(--hero-yellow); color: var(--ink); border-color: var(--ink); font-size: 0.8rem;">RAG / ChromaDB</span>
+                    <span class="comic-pill" style="background: var(--hero-yellow); color: var(--ink); border-color: var(--ink); font-size: 0.8rem;">Python</span>
+                    <span class="comic-pill" style="background: var(--hero-yellow); color: var(--ink); border-color: var(--ink); font-size: 0.8rem;">SQL</span>
+                    <span class="comic-pill" style="background: var(--hero-yellow); color: var(--ink); border-color: var(--ink); font-size: 0.8rem;">Governance</span>
+                </div>
+            </article>
+
+            <!-- LOWE'S -->
+            <article class="panel p-6 md:p-8 relative" style="background: var(--paper-pure);">
+                <div class="absolute top-0 right-0 px-4 py-1 f-label text-xs halftone-blue" style="color: white; border-left: 4px solid var(--ink); border-bottom: 4px solid var(--ink);">★ FEB 2021 — OCT 2024</div>
+                <div class="flex items-start gap-5 mb-4 mt-8 md:mt-2">
+                    <div class="logo-box">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="Lowe's">
+                            <text x="50" y="68" text-anchor="middle" font-family="Bowlby One, sans-serif" font-size="56" fill="#000">L</text>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="f-bowlby text-xl md:text-3xl uppercase leading-tight">Lowe's India</h3>
+                        <p class="font-bold opacity-70 italic mt-1">Analytics Lead (Acting Team Lead)</p>
+                    </div>
+                </div>
+                <ul class="space-y-2 text-sm md:text-base leading-relaxed" style="font-weight:500;">
+                    <li>→ Integrated <b>FP&amp;A and supply-chain analytics</b> platforms — compressing exec financial reporting from <b>3 days to 4 hours</b>.</li>
+                    <li>→ Built predictive models for <b>demand forecasting &amp; inventory optimization</b> with Python, scikit-learn, and TensorFlow — <b>23%</b> reduction in inventory risk across 5 BUs.</li>
+                    <li>→ Ran <b>time-series &amp; anomaly detection</b> on sales patterns, generating 3+ monthly financial insights for proactive risk mitigation.</li>
+                </ul>
+                <div class="flex flex-wrap gap-2 mt-5 pt-4" style="border-top: 3px dashed var(--ink);">
+                    <span class="comic-pill" style="background: var(--hero-blue); color: #fff; border-color: var(--ink); font-size: 0.8rem;">Python</span>
+                    <span class="comic-pill" style="background: var(--hero-blue); color: #fff; border-color: var(--ink); font-size: 0.8rem;">scikit-learn</span>
+                    <span class="comic-pill" style="background: var(--hero-blue); color: #fff; border-color: var(--ink); font-size: 0.8rem;">TensorFlow</span>
+                    <span class="comic-pill" style="background: var(--hero-blue); color: #fff; border-color: var(--ink); font-size: 0.8rem;">Time Series</span>
+                    <span class="comic-pill" style="background: var(--hero-blue); color: #fff; border-color: var(--ink); font-size: 0.8rem;">FP&amp;A</span>
+                </div>
+            </article>
+
+            <!-- COMPACT EARLIER ROLES -->
+            <div class="pt-4">
+                <p class="f-bangers text-2xl mb-4" style="color: var(--hero-red); letter-spacing: 0.04em;">★ EARLIER CHAPTERS</p>
+                <div class="space-y-4">
+
+                    <div class="role-row">
+                        <div class="logo-box" style="width:48px;height:48px;">
+                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="Amazon">
+                                <text x="50" y="55" text-anchor="middle" font-family="Bowlby One, sans-serif" font-size="36" fill="#000">a</text>
+                                <path d="M 20 70 Q 50 85 80 70" stroke="#000" stroke-width="4" fill="none" stroke-linecap="round"/>
+                                <path d="M 75 65 L 82 70 L 75 75" stroke="#000" stroke-width="4" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex flex-wrap items-baseline gap-3">
+                                <h3 class="f-bowlby text-base md:text-lg uppercase">Amazon EU Sàrl, Luxembourg</h3>
+                                <span class="f-label text-xs opacity-70">FEB 2020 — AUG 2020</span>
+                            </div>
+                            <p class="text-xs font-bold italic opacity-70">Business Analyst II</p>
+                            <p class="text-xs md:text-sm mt-2 leading-relaxed" style="font-weight:500;">Led EU Softline Intelligence across <b>7 countries</b> → <b>€2.1M</b> in cost optimization. Statistical forecasting cut weekly product gaps 5%, lifting fulfillment <b>80% → 85%</b>.</p>
+                        </div>
+                    </div>
+
+                    <div class="role-row">
+                        <div class="logo-box" style="width:48px;height:48px;">
+                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="Cloudtail">
+                                <path d="M 25 55 Q 15 55 15 45 Q 15 35 27 35 Q 30 25 45 25 Q 60 25 63 38 Q 78 38 78 50 Q 78 62 65 62 L 25 62 Z" fill="#000"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex flex-wrap items-baseline gap-3">
+                                <h3 class="f-bowlby text-base md:text-lg uppercase">Cloudtail India</h3>
+                                <span class="f-label text-xs opacity-70">NOV 2017 — JAN 2020</span>
+                            </div>
+                            <p class="text-xs font-bold italic opacity-70">Business Analyst</p>
+                            <p class="text-xs md:text-sm mt-2 leading-relaxed" style="font-weight:500;">Automated retail analytics in <b>Qlik Sense</b> — cycles cut <b>30%</b>, surfaced <b>₹15Cr</b> incremental revenue. ML-driven customer segmentation &amp; cohort analysis for CLV.</p>
+                        </div>
+                    </div>
+
+                    <div class="role-row">
+                        <div class="logo-box" style="width:48px;height:48px;">
+                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="Tesco">
+                                <text x="50" y="65" text-anchor="middle" font-family="Bowlby One, sans-serif" font-size="44" fill="#000">T</text>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex flex-wrap items-baseline gap-3">
+                                <h3 class="f-bowlby text-base md:text-lg uppercase">Tesco India</h3>
+                                <span class="f-label text-xs opacity-70">APR 2016 — NOV 2017</span>
+                            </div>
+                            <p class="text-xs font-bold italic opacity-70">Insight Analyst</p>
+                            <p class="text-xs md:text-sm mt-2 leading-relaxed" style="font-weight:500;">Built enterprise <b>BI infrastructure</b> with automated SQL/Python ETL — processing time down <b>25%</b>, unlocking <b>₹26Cr</b> in operational efficiencies.</p>
+                        </div>
+                    </div>
+
+                    <div class="role-row">
+                        <div class="logo-box" style="width:48px;height:48px;">
+                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="Accenture">
+                                <path d="M 50 20 L 80 75 L 65 75 L 60 65 L 40 65 L 35 75 L 20 75 Z M 45 55 L 55 55 L 50 42 Z" fill="#000"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex flex-wrap items-baseline gap-3">
+                                <h3 class="f-bowlby text-base md:text-lg uppercase">Accenture India</h3>
+                                <span class="f-label text-xs opacity-70">MAR 2010 — JUN 2013</span>
+                            </div>
+                            <p class="text-xs font-bold italic opacity-70">Software Engineer</p>
+                            <p class="text-xs md:text-sm mt-2 leading-relaxed" style="font-weight:500;">Engineering foundation in production software systems — the technical fluency that later powered the analytics &amp; ML career.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- POWERS / TECH ARSENAL -->
+    <section id="stack" class="px-4 md:px-12 py-12 halftone-blue border-y-4" style="border-color: var(--ink); color: white;">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-end gap-4 mb-10 flex-wrap">
+                <h2 class="section-title" style="color: var(--hero-yellow); text-shadow: 4px 4px 0 var(--ink);">SUPER POWERS</h2>
+                <p class="f-label text-sm md:text-base" style="color: white; letter-spacing: 0.12em; opacity: 0.9;">↳ THE TOOLKIT FOR SAVING THE DAY</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="panel p-5" style="background: var(--paper-pure); color: var(--ink);">
+                    <h3 class="f-bowlby text-lg uppercase mb-3" style="color: var(--hero-red);">⚡ DATA SCIENCE &amp; ML</h3>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">Predictive Modeling</span>
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">Time Series</span>
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">Anomaly Detection</span>
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">A/B Testing</span>
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">scikit-learn</span>
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">TensorFlow</span>
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">pandas</span>
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">NumPy</span>
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">matplotlib</span>
+                    </div>
+                </div>
+
+                <div class="panel p-5" style="background: var(--paper-pure); color: var(--ink);">
+                    <h3 class="f-bowlby text-lg uppercase mb-3" style="color: var(--pow-pink);">★ APPLIED AI / GENAI</h3>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">RAG</span>
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">MCP Servers</span>
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">ChromaDB</span>
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">Sentence-Transformers</span>
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">Snowflake Cortex</span>
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">Embeddings</span>
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">LLM-Augmented SQL</span>
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">AI Strategy</span>
+                    </div>
+                </div>
+
+                <div class="panel p-5" style="background: var(--paper-pure); color: var(--ink);">
+                    <h3 class="f-bowlby text-lg uppercase mb-3" style="color: var(--hero-blue);">★ CLOUD &amp; DATA</h3>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">Snowflake</span>
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">AWS</span>
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">GCP</span>
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">Redshift</span>
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">BigQuery</span>
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">SQL</span>
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">ETL / ELT</span>
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">Data Pipelines</span>
+                    </div>
+                </div>
+
+                <div class="panel p-5" style="background: var(--paper-pure); color: var(--ink);">
+                    <h3 class="f-bowlby text-lg uppercase mb-3" style="color: #16a34a;">⚡ PROGRAMMING</h3>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">Python</span>
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">SQL</span>
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">DAX</span>
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">Bash</span>
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">Git</span>
+                    </div>
+                </div>
+
+                <div class="panel p-5" style="background: var(--paper-pure); color: var(--ink);">
+                    <h3 class="f-bowlby text-lg uppercase mb-3" style="color: #ea580c;">★ VISUALIZATION &amp; BI</h3>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">Power BI</span>
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">Tableau</span>
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">Looker</span>
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">QuickSight</span>
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">Qlik Sense</span>
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">Dashboard Design</span>
+                    </div>
+                </div>
+
+                <div class="panel p-5" style="background: var(--paper-pure); color: var(--ink);">
+                    <h3 class="f-bowlby text-lg uppercase mb-3" style="color: #0891b2;">★ FINANCIAL ANALYTICS</h3>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">FP&amp;A</span>
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">Financial KPIs</span>
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">Risk Management</span>
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">Revenue Optimization</span>
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">Cost Analysis</span>
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">Forecasting</span>
+                    </div>
+                </div>
+
+                <div class="panel p-5 md:col-span-2 lg:col-span-3" style="background: var(--paper-pure); color: var(--ink);">
+                    <h3 class="f-bowlby text-lg uppercase mb-3" style="color: var(--villain-purple);">★ LEADERSHIP &amp; STRATEGY</h3>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">Analytics Leadership</span>
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">Cross-Functional Teams</span>
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">Applied AI Strategy</span>
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">Stakeholder Communication</span>
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">Data Governance</span>
+                        <span class="comic-pill" style="font-size:0.75rem; padding:3px 9px;">Executive Reporting</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="px-4 md:px-12 py-12 max-w-7xl mx-auto reveal">
+        <div class="flex items-end gap-4 mb-6 flex-wrap">
+            <h2 class="section-title blue">THE TRAINING ARC</h2>
+            <p class="f-label text-sm md:text-base opacity-80" style="letter-spacing: 0.12em;">↳ WHERE THE POWERS WERE FORGED</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="panel p-6 panel-tilt-l" style="background: var(--paper-pure);">
+                <div class="flex items-start gap-4">
+                    <div class="logo-box" style="width:48px;height:48px;">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="NMIMS">
+                            <text x="50" y="60" text-anchor="middle" font-family="Bowlby One, sans-serif" font-size="22" fill="#000">N</text>
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="f-bangers text-xs" style="color: var(--hero-red);">★ 2014 — 2016</p>
+                        <h3 class="f-bowlby text-xl uppercase mt-1">PGDM (MBA)</h3>
+                        <p class="font-bold italic opacity-80">NMIMS Bengaluru</p>
+                    </div>
+                </div>
+            </div>
+            <div class="panel p-6 panel-tilt-r" style="background: var(--paper-pure);">
+                <div class="flex items-start gap-4">
+                    <div class="logo-box" style="width:48px;height:48px;">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="GGSIPU">
+                            <text x="50" y="60" text-anchor="middle" font-family="Bowlby One, sans-serif" font-size="22" fill="#000">G</text>
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="f-bangers text-xs" style="color: var(--hero-blue);">★ 2005 — 2009</p>
+                        <h3 class="f-bowlby text-xl uppercase mt-1">B.Tech, Computer Science</h3>
+                        <p class="font-bold italic opacity-80">GGSIPU Delhi</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT / CTA -->
+    <section id="contact" class="px-4 md:px-12 py-12 max-w-7xl mx-auto reveal">
+        <div class="panel p-8 md:p-12 text-center halftone-yellow relative" style="color: var(--ink);">
+            <svg class="web-corner" style="top:-2px; left:-2px;" viewBox="0 0 80 80">
+                <g stroke="#0a0a0a" stroke-width="2" fill="none">
+                    <path d="M0,0 L80,80 M0,40 Q40,40 40,80 M0,0 Q40,40 80,40 M0,80 L80,0"/>
+                </g>
+            </svg>
+            <svg class="web-corner" style="top:-2px; right:-2px; transform: scaleX(-1);" viewBox="0 0 80 80">
+                <g stroke="#0a0a0a" stroke-width="2" fill="none">
+                    <path d="M0,0 L80,80 M0,40 Q40,40 40,80 M0,0 Q40,40 80,40 M0,80 L80,0"/>
+                </g>
+            </svg>
+
+            <div class="burst mb-6">THWIP!</div>
+
+            <h2 class="f-bowlby text-3xl md:text-5xl uppercase leading-none mb-4" style="text-shadow: 4px 4px 0 var(--hero-red);">SIGNAL THE HERO</h2>
+            <p class="leading-relaxed mt-4 max-w-2xl mx-auto text-base md:text-lg" style="font-weight:500;">When the next data crisis lights up the sky — full-time only, senior IC / lead / manager roles, applied AI &amp; analytics platforms.</p>
+            <div class="mt-7 flex flex-wrap gap-3 justify-center">
+                <a href="mailto:aakash.ascend@gmail.com" class="contact-pill primary">✉ aakash.ascend@gmail.com</a>
+                <a href="https://linkedin.com/in/akashascend" class="contact-pill">in / akashascend</a>
+                <a href="/Akash_Kumar_Resume.pdf" download class="contact-pill" style="background: var(--ink); color: var(--hero-yellow); border-color: var(--ink);">↓ Download Resume (PDF)</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="halftone-red text-center py-6 border-t-4" style="border-color: var(--ink); color: white;">
+        <p class="f-label text-xs md:text-sm" style="letter-spacing: 0.12em; opacity: 0.95;">★ AKASH KUMAR SHARMA · BENGALURU, IN · +91-9686333180 · © 2026 ★</p>
+        <p class="text-xs mt-2 font-semibold opacity-80">— with great data comes great responsibility —</p>
+    </footer>
+
+    <script>
+        // Theme toggle
+        (function() {
+            const root = document.documentElement;
+            const btn = document.getElementById('theme-toggle');
+            const icon = document.getElementById('theme-icon');
+            const stored = localStorage.getItem('aks-theme');
+            const initial = stored || 'light';
+            applyTheme(initial);
+            function applyTheme(t) {
+                root.setAttribute('data-theme', t);
+                icon.textContent = t === 'dark' ? '◑' : '◐';
+            }
+            btn.addEventListener('click', () => {
+                const cur = root.getAttribute('data-theme') || 'light';
+                const next = cur === 'dark' ? 'light' : 'dark';
+                applyTheme(next);
+                localStorage.setItem('aks-theme', next);
+            });
+        })();
+
+        // Sticky nav active section
+        (function() {
+            const links = document.querySelectorAll('.nav-link');
+            const sections = ['impact','projects','experience','stack','contact']
+                .map(id => document.getElementById(id)).filter(Boolean);
+            const setActive = (id) => {
+                links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + id));
+            };
+            const obs = new IntersectionObserver((entries) => {
+                entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); });
+            }, { rootMargin: '-40% 0px -55% 0px' });
+            sections.forEach(s => obs.observe(s));
+        })();
+
+        // Reveal
+        (function() {
+            const els = document.querySelectorAll('.reveal');
+            const obs = new IntersectionObserver((entries) => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) { e.target.classList.add('in-view'); obs.unobserve(e.target); }
+                });
+            }, { threshold: 0.1 });
+            els.forEach(el => obs.observe(el));
+        })();
+    </script>
+</body>
+</html>
