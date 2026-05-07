@@ -430,6 +430,103 @@
             opacity: 0.4;
         }
 
+
+        /* === HERO ORIGIN PANEL FIX === */
+        .origin-panel {
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            justify-content: flex-start;
+            overflow: hidden;
+        }
+        .origin-card {
+            position: relative;
+            z-index: 1;
+            background: rgba(255,255,255,0.96);
+            color: var(--ink);
+            border: 4px solid var(--ink);
+            box-shadow: 5px 5px 0 var(--ink);
+            padding: 18px;
+            flex: 0 1 auto;
+            display: flex;
+            flex-direction: column;
+        }
+        [data-theme="dark"] .origin-card {
+            background: rgba(26,29,46,0.96);
+            color: var(--ink);
+        }
+        .origin-kicker {
+            width: fit-content;
+            margin-bottom: 10px;
+            transform: rotate(-2deg);
+        }
+        .origin-title {
+            color: var(--hero-yellow);
+            -webkit-text-stroke: 2px var(--ink);
+            text-shadow: 3px 3px 0 var(--ink);
+            line-height: 0.95;
+        }
+        .origin-copy {
+            margin-top: 12px;
+            font-weight: 650;
+            line-height: 1.42;
+        }
+        .origin-copy p + p { margin-top: 10px; }
+        .origin-chapter-list {
+            margin-top: 14px;
+            display: grid;
+            gap: 8px;
+        }
+        .origin-chapter {
+            border: 3px solid var(--ink);
+            background: var(--caption-bg);
+            color: var(--ink);
+            box-shadow: 3px 3px 0 var(--ink);
+            padding: 8px 10px;
+            font-size: 0.72rem;
+            line-height: 1.25;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.035em;
+        }
+        .origin-chapter b {
+            display: block;
+            font-family: 'Bangers', cursive;
+            font-size: 1rem;
+            letter-spacing: 0.06em;
+            color: var(--hero-red);
+            margin-bottom: 2px;
+        }
+        [data-theme="dark"] .origin-chapter { background: var(--paper-pure); }
+        .origin-meta {
+            position: relative;
+            z-index: 1;
+            background: var(--ink);
+            color: var(--hero-yellow);
+            border: 4px solid var(--ink);
+            box-shadow: 5px 5px 0 rgba(0,0,0,0.35);
+            padding: 12px 14px;
+            margin-top: 0;
+        }
+        .origin-meta div + div { margin-top: 6px; }
+        .origin-mini-burst {
+            position: relative;
+            z-index: 1;
+            align-self: flex-start;
+            background: var(--hero-yellow);
+            color: var(--ink);
+            border: 4px solid var(--ink);
+            box-shadow: 5px 5px 0 var(--ink);
+            padding: 8px 12px;
+            transform: rotate(1.5deg);
+        }
+        @media (min-width: 768px) {
+            .hero-grid { align-items: stretch; }
+            /* Keep the right panel content top-aligned with the left hero content. */
+            .origin-panel { justify-content: flex-start; }
+        }
+
         @media (max-width: 768px) {
             .panel { box-shadow: 4px 4px 0 var(--ink); }
             .panel-tilt-l, .panel-tilt-r { transform: none; }
@@ -480,7 +577,7 @@
 
     <!-- HERO PANEL -->
     <header id="top" class="px-4 md:px-12 pt-8 md:pt-12 max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-6 hero-grid">
 
             <!-- LEFT BIG PANEL -->
             <div class="md:col-span-8 panel halftone-yellow p-8 md:p-10 relative" style="color: var(--ink);">
@@ -531,25 +628,41 @@
             </div>
 
             <!-- RIGHT SMALL PANEL — "ORIGIN STORY" -->
-            <div class="md:col-span-4 panel halftone-red p-7 md:p-8 flex flex-col justify-between" style="color: white;">
+            <aside class="md:col-span-4 panel halftone-red p-6 md:p-8 origin-panel" style="color: white;">
                 <svg class="web-corner" style="top:-2px; right:-2px; transform: scaleX(-1);" viewBox="0 0 80 80">
                     <g stroke="white" stroke-width="2" fill="none" opacity="0.6">
                         <path d="M0,0 L80,80 M0,40 Q40,40 40,80 M0,0 Q40,40 80,40 M0,80 L80,0"/>
                     </g>
                 </svg>
-                <div>
-                    <div class="comic-pill mb-3" style="background: var(--ink); color: var(--hero-yellow); border-color: var(--ink); transform: rotate(-2deg);">★ ORIGIN STORY</div>
-                    <h2 class="f-bangers text-3xl md:text-4xl mt-2" style="color: var(--hero-yellow); -webkit-text-stroke: 2px var(--ink); text-shadow: 3px 3px 0 var(--ink);">THE POWER, THE PURPOSE</h2>
-                    <p class="leading-relaxed text-sm md:text-base mt-4" style="color: white; font-weight: 500;">
-                        With great data comes great responsibility. I translate complex architectures into systems that help leaders decide <i>faster</i>, <i>cheaper</i>, with <i>sharper context</i>.
-                    </p>
+
+                <div class="origin-card halftone-light">
+                    <div class="comic-pill origin-kicker" style="background: var(--ink); color: var(--hero-yellow); border-color: var(--ink);">★ ORIGIN STORY</div>
+                    <h2 class="f-bangers text-3xl md:text-4xl origin-title">THE POWER,<br>THE PURPOSE</h2>
+                    <div class="origin-copy text-sm md:text-[0.95rem]">
+                        <p>
+                            With great data comes great responsibility. I turn complex architectures into decision systems that help leaders move <i>faster</i>, operate <i>cheaper</i>, and act with <i>sharper context</i>.
+                        </p>
+                        <p>
+                            The arc runs from production engineering to retail analytics, forecasting, and now applied AI: governed data products, RAG assistants, MCP servers, and executive-ready metrics.
+                        </p>
+                    </div>
+                    <div class="origin-chapter-list">
+                        <div class="origin-chapter"><b>Act I</b> Engineer who learned how systems break.</div>
+                        <div class="origin-chapter"><b>Act II</b> Analyst turning messy data into trusted decisions.</div>
+                        <div class="origin-chapter"><b>Act III</b> Leader building AI analytics for finance and ops.</div>
+                    </div>
                 </div>
-                <div class="mt-6 pt-4 border-t-4 border-white f-label text-xs" style="letter-spacing: 0.08em;">
+
+                <div class="origin-meta f-label text-xs" style="letter-spacing: 0.08em;">
                     <div>↳ HQ: Cisco Meraki India</div>
                     <div>↳ Mission: Staff / Lead / Manager FTE</div>
                     <div>↳ Mode: On-site · Hybrid · Remote</div>
                 </div>
-            </div>
+
+                <div class="origin-mini-burst f-bangers text-xl md:text-2xl">
+                    14 YEARS · 6 ORGS
+                </div>
+            </aside>
         </div>
     </header>
 
@@ -557,7 +670,7 @@
     <section class="px-4 md:px-12 pt-12 max-w-7xl mx-auto reveal">
         <div class="flex items-end gap-4 mb-4 flex-wrap">
             <h2 class="section-title red">THE ORIGIN STORY</h2>
-            <p class="f-label text-sm md:text-base mt-2 opacity-80" style="letter-spacing: 0.12em;">↳ 14 YEARS · 6 ORGS · ENGINEER → MANAGER</p>
+            <p class="f-label text-sm md:text-base mt-2 opacity-80" style="letter-spacing: 0.12em;">↳ 14 YEARS · 6 ORGS</p>
         </div>
         <div class="panel p-4 md:p-6 halftone-light" style="background: var(--paper-pure);">
             <div class="timeline-track" style="border-bottom: none;">
